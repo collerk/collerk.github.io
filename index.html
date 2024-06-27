@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collerk - Elevate Your Social Media Presence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Collerk</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="https://forms.gle/RfPidoXhHngS8vSe7" target="_blank">Request Early Access</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Collerk</h1>
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                  <p>Elevate Your Social Media Game</p>
+                  <figcaption class="blockquote-footer text-light ">
+                    With AI
+                  </figcaption>  
+                </blockquote>
+              </figure>
+            <a href="https://forms.gle/RfPidoXhHngS8vSe7" target="_blank" class="btn btn-primary btn-lg">Request Early Access</a>
+        </div>
+        <div class="scroll-down">
+            <a href="#features"><i class="fas fa-chevron-down fa-2x"></i></a>
+        </div>
+    </header>
+
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="images/img1.jpeg" alt="Focus on Creating Content" class="feature-image">
+                    <div class="feature-content">
+                        <h3>Focus on Creating Content</h3>
+                        <p>Streamline your workflow and dedicate more time to crafting engaging and high-quality content.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="images/img2.jpg" alt="AI-Powered Analytics" class="feature-image">
+                    <div class="feature-content">
+                        <h3>AI-Powered Analytics</h3>
+                        <p>Leverage advanced analytics and AI-driven insights to discover the best topics and times for posting.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="images/img3.jpeg" alt="Engage with Audience" class="feature-image">
+                    <div class="feature-content">
+                        <h3>Engage with Audience</h3>
+                        <p>Utilize AI to foster meaningful interactions with your audience and connect with potential collaborators.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer id="footer" class="py-3 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p class="mb-0">&copy; 2024 Collerk. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
