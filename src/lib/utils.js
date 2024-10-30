@@ -36,6 +36,6 @@ export function constructMetadata({
       images: [image],
       creator: "@yourhandle",
     },
-    metadataBase: new URL('https://yourapp.com')
+    metadataBase: new URL('https://collerk.com')
   };
 }
