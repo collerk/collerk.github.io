@@ -7,12 +7,13 @@ import { Badge } from '@/components/ui/badge';
 const FeatureDisplay = () => {
   const [activeFeature, setActiveFeature] = useState(0);
 
+
   const features = [
     {
       title: "AI-Powered Smart Scheduling",
       icon: Calendar,
       description: "Post at peak engagement times with our AI algorithm that learns from your audience's behavior",
-      preview: "/api/placeholder/600/400",
+      preview: "https://cdn.prod.website-files.com/62fcfcf2e1a4c21ed18b80e6/655f601be42b2ab3729ce380_efpzd0jx3n.png",
       benefits: ["40% Higher Engagement", "Cross-Platform Sync", "Smart Time Predictions"],
       color: "purple"
     },
@@ -20,7 +21,7 @@ const FeatureDisplay = () => {
       title: "Real-Time Analytics Dashboard",
       icon: BarChart2,
       description: "Track performance metrics across all platforms with beautiful visualizations and actionable insights",
-      preview: "/api/placeholder/600/400",
+      preview: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       benefits: ["Cross-Platform Metrics", "Custom Reports", "Growth Analytics"],
       color: "blue"
     },
@@ -28,7 +29,7 @@ const FeatureDisplay = () => {
       title: "Brand Collaboration Hub",
       icon: Users2,
       description: "Connect with brands, manage partnerships, and track campaign performance in one place",
-      preview: "/api/placeholder/600/400",
+      preview: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       benefits: ["Partnership Tools", "Campaign Tracking", "ROI Analytics"],
       color: "indigo"
     },
@@ -36,14 +37,14 @@ const FeatureDisplay = () => {
       title: "Visual Content Board",
       icon: Lightbulb,
       description: "Organize and collaborate on content ideas with our intuitive visual board system",
-      preview: "/api/placeholder/600/400",
+      preview: "https://images.unsplash.com/photo-1590402494587-44b71d7772f6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       benefits: ["Visual Planning", "Team Workspace", "Content Calendar"],
       color: "pink"
     }
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white">
+    <section id="features" className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white">
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
       
       <div className="container mx-auto px-4 max-w-7xl">
@@ -109,29 +110,7 @@ const FeatureDisplay = () => {
           ))}
         </div>
 
-        <div className="mt-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">
-            Works With Your Favorite Platforms
-          </h3>
-          
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {['Instagram', 'Twitter', 'Facebook', 'LinkedIn', 'TikTok'].map((platform) => (
-              <div
-                key={platform}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
-              >
-                <img
-                  src={`/api/placeholder/24/24`}
-                  alt={platform}
-                  className="w-6 h-6 rounded-full"
-                />
-                <span className="font-medium bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                  {platform}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
     </section>
   );

@@ -4,47 +4,47 @@ function AsSeenOn() {
     return (
         <InfiniteSlider gap={48} reverse>
             <img
-                src='/brand-logos/product_hunt.png'
+                src='https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Instagram-1024.png'
                 alt=''
                 className='h-[100px] w-auto'
             />
             <img
-                src='/brand-logos/fast.png'
+                src='https://cdn4.iconfinder.com/data/icons/threads-by-instagram/128/threads-logo-brand-sign-contained-1024.png'
                 alt=''
                 className='h-[40px] w-auto'
             />
             <img
-                src='/brand-logos/inc.png'
+                src='https://cdn2.iconfinder.com/data/icons/threads-by-instagram/24/x-logo-twitter-new-brand-contained-1024.png'
                 alt=''
                 className='h-[80px] w-auto'
             />
             <img
-                src='/brand-logos/techcrunch.png'
+                src='https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-1024.png'
                 alt=''
                 className='h-[70px] w-auto'
             />
             <img
-                src='/brand-logos/forbes.svg'
+                src='https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-1024.png'
                 alt=''
                 className='h-[120px] w-auto'
             />
             <img
-                src='/brand-logos/wired.png'
+                src='https://cdn2.iconfinder.com/data/icons/social-media-2421/512/TikTok-1024.png'
                 alt=''
                 className='h-[50px] w-auto'
             />
             <img
-                src='/brand-logos/businessinsider.png'
+                src='https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Pinterest-1024.png'
                 alt=''
                 className='h-[55px] w-auto'
             />
             <img
-                src='/brand-logos/cnn.png'
+                src='https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-1024.png'
                 alt=''
                 className='h-[55px] w-auto'
             />
             <img
-                src='/brand-logos/bloomberg.png'
+                src='https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_reddit-1024.png'
                 alt=''
                 className='h-[90px] w-auto'
             />

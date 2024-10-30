@@ -7,15 +7,15 @@ function Footer() {
             <MaxWidthWrapper className='py-14 pb-20 flex flex-col items-center justify-center md:items-start md:justify-between md:flex-row'>
                 <div className='max-w-[16rem] flex flex-col space-y-4 items-center justify-center md:items-start md:justify-normal'>
                     <Link href='/' className='flex items-center z-40 font-bold text-lg'>
-                        YouLogo
+                        Collerk
                     </Link>
 
                     <p className='text-gray-700 md:text-[0.875rem] font-medium text-center md:text-left'>
-                        Lorem ipsum dolor sit amet consectet
+                        Social Media Management
                     </p>
 
                     <small className='mb-2 block text-gray-700 select-none'>
-                        YourApp &copy; {new Date().getFullYear()} - All rights reserved
+                        Collerk &copy; {new Date().getFullYear()} - All rights reserved
                     </small>
                 </div>
 

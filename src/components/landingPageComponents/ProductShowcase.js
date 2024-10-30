@@ -6,7 +6,19 @@ import { Card } from '@/components/ui/card';
 
 const ProductShowcase = () => {
   const [activeTab, setActiveTab] = useState('analytics');
-  
+  const supportedPlatforms = {
+    'Instagram': 'https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Instagram-1024.png',
+    'Threads': 'https://cdn4.iconfinder.com/data/icons/threads-by-instagram/128/threads-logo-brand-sign-contained-1024.png',
+    'Twitter/X': 'https://cdn2.iconfinder.com/data/icons/threads-by-instagram/24/x-logo-twitter-new-brand-contained-1024.png',
+    'Facebook': 'https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-1024.png',
+    'LinkedIn': 'https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-1024.png',
+    'TikTok': 'https://cdn2.iconfinder.com/data/icons/social-media-2421/512/TikTok-1024.png',
+    'Pinterest': 'https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Pinterest-1024.png',
+    'YouTube': 'https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-1024.png',
+    'Reddit': 'https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_reddit-1024.png'
+  };
+
+
   const analyticsData = [
     { name: 'Mon', value: 2400 },
     { name: 'Tue', value: 4200 },
@@ -156,6 +168,33 @@ const ProductShowcase = () => {
             )}
           </div>
         </div>
+
+        <div className="mt-20">
+          <h3 className="text-2xl font-semibold text-center mb-8">
+            Works With Your Favorite Platforms
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 py-8">
+                {Object.keys(supportedPlatforms).map((platform) => (
+                    <div
+                    key={platform}
+                    className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200"
+                    >
+                    <div className="p-3 rounded-full bg-gradient-to-r">
+                        <img
+                        src={supportedPlatforms[platform]} 
+                        alt={platform}
+                        className="w-10 h-10"
+                        />
+                    </div>
+                    <span className="text-lg font-semibold text-gray-800 group-hover:text-indigo-600 transition-all duration-300">
+                        {platform}
+                    </span>
+                    </div>
+                ))}
+        </div>
+        </div>
+
+
       </div>
     </section>
   );

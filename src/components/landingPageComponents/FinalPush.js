@@ -17,7 +17,7 @@ function FinalPush() {
                     </h2>
 
                     <p className='text-lg font-medium leading-relaxed text-gray-700'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, facere, excepturi id suscipit provident voluptatum placeat, delectus necessitatibus molestias tempore inventore accusamus expedita quae. Deleniti quod incidunt asperiores cupiditate repudiandae.
+                    Streamline your social media presence across all platforms. Schedule content, analyze performance, and collaborate with brands - all in one powerful dashboard.
                     </p>
 
                     <div className="w-full lg:w-1/4">
