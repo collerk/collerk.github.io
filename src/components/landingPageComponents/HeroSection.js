@@ -3,6 +3,7 @@ import { ArrowRight, Check, Star } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '../ui/button';
+import Image from 'next/image'
 
 function HeroSection() {
     return (
@@ -68,10 +69,17 @@ function HeroSection() {
                 </div>
 
                 <div className="col-span-full mt-14 md:mt-0 lg:col-span-1">
-                    <div className="w-full h-60 lg:h-full rounded-3xl bg-gray-200/80 flex items-center justify-center">
-                        <h1 className='text-center text-lg font-bold'>Your graphic</h1>
+                    <div className="w-full h-[500px] lg:h-[600px] rounded-3xl bg-gray-200/80 flex items-center justify-center">
+                        <Image
+                        src="/images/close-up-notebook-with-colored-drawings (1).jpg"
+                        alt="Description"
+                        height="500" // Make the image fill the container
+                        width="300" // Ensure the image covers the container without stretching
+                        className="rounded-3xl"
+                        />
                     </div>
-                </div>
+                    </div>
+
             </MaxWidthWrapper>
         </section>
     )
