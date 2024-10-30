@@ -22,7 +22,7 @@ function LandingPage() {
             <ProductShowcase />
             <BeforeAfter />
             <PricingSection />
-            {/* <FaqSection /> */}
+            <FaqSection />
             {/* <Testimonials /> */}
             <FinalPush />
             <Footer />

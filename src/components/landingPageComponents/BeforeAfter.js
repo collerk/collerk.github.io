@@ -132,7 +132,7 @@ function BeforeAfter() {
 
                             <div className='flex items-center justify-center gap-4 pt-4 border-t border-gray-100'>
                                 <img 
-                                    src="/api/placeholder/48/48" 
+                                    src="https://images.unsplash.com/photo-1598550880863-4e8aa3d0edb4?q=80&w=2842&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                                     alt="Sarah Mitchell" 
                                     className="h-12 w-12 rounded-full ring-2 ring-violet-100 object-cover" 
                                 />

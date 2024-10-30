@@ -1,111 +1,76 @@
 'use client'
 import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-react';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
     Accordion,
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
 } from '@/components/ui/accordion';
-import { ChevronRight } from 'lucide-react';
 
 const FAQItem = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="bg-slate-100/50 p-4 px-7 rounded-lg hover:shadow">
-            <div className="flex justify-between items-center cursor-pointer text-gray-700" onClick={() => {
-                setIsOpen(!isOpen);
-            }}>
-                <h2 className={`text-xl font-semibold ${isOpen ? 'text-black' : ''}`}>{question}</h2>
-                <ChevronDown className={cn("h-4 w-4 transition-all text-muted-foreground", {
-                    "-rotate-180": isOpen
-                })} />
+        <div
+            className="bg-gradient-to-r from-violet-600 to-indigo-600 p-6 rounded-lg hover:shadow-lg transition-all duration-300 ease-in-out group cursor-pointer text-white"
+            onClick={() => setIsOpen(!isOpen)}
+        >
+            <div className="flex justify-between items-center">
+                <h2 className={`text-xl font-semibold ${isOpen ? 'text-white' : 'text-white/90'}`}>{question}</h2>
+                <ChevronDown
+                    className={cn("h-5 w-5 text-white transition-transform duration-200", {
+                        "rotate-180": isOpen,
+                    })}
+                />
             </div>
-            {isOpen && <p className='mt-3 leading-relaxed'>{answer}</p>}
+            {isOpen && <p className="mt-4 text-base text-white/90">{answer}</p>}
         </div>
     );
 };
 
-
 function FaqSection() {
     const faqs = [
         {
-            question: "Lorem ipsum dolor sit amet?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus, nunc at malesuada facilisis, odio tortor pretium nisl, id tincidunt purus arcu eu quam. Integer nec libero sed augue tincidunt aliquet."
+            question: "How does Collerk help grow my social media presence?",
+            answer: "Collerk offers a comprehensive set of tools including post scheduling, multi-channel publishing, advanced analytics, and AI-driven content suggestions to help influencers and businesses expand their reach."
         },
         {
-            question: "Quisque vehicula justo nec?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed justo non nulla suscipit viverra. Ut commodo, orci a aliquet venenatis, ligula urna consequat nulla, in malesuada mauris odio id quam."
+            question: "Can I connect multiple social media accounts?",
+            answer: "Absolutely! Collerk supports Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest, and YouTube, allowing you to manage all your platforms from one place."
         },
         {
-            question: "Pellentesque habitant morbi tristique?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis orci nec nunc tempus interdum. Nulla facilisi. Suspendisse potenti. Vivamus vel felis nec orci pulvinar hendrerit. Curabitur ac felis in libero scelerisque."
+            question: "Does Collerk provide engagement analytics?",
+            answer: "Yes, we offer detailed insights including follower growth, engagement metrics, and performance tracking to optimize your social media strategy."
         },
         {
-            question: "Vestibulum ante ipsum primis?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac justo eget lorem suscipit tempor. Curabitur a urna non eros porttitor tincidunt. Donec gravida, mauris et porttitor gravida, nulla nisi viverra ligula, id faucibus magna est vel nulla."
+            question: "Is there a mobile version of Collerk?",
+            answer: "Yes, Collerk is available on both iOS and Android, ensuring you can manage your social presence on the go."
         },
         {
-            question: "Nam at nisi vitae erat?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod leo eu libero faucibus, id pharetra metus venenatis. Phasellus nec diam a massa fermentum pellentesque. Vivamus suscipit, urna nec varius cursus, quam urna aliquet urna, eget sollicitudin nisi turpis non enim."
+            question: "How secure is my data on Collerk?",
+            answer: "We prioritize data security with encrypted storage and SSL-secured connections. You can also request data export or deletion at any time."
         },
         {
-            question: "Nam at nisi vitae erat?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod leo eu libero faucibus, id pharetra metus venenatis. Phasellus nec diam a massa fermentum pellentesque. Vivamus suscipit, urna nec varius cursus, quam urna aliquet urna, eget sollicitudin nisi turpis non enim."
-        },
-        {
-            question: "Nam at nisi vitae erat?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod leo eu libero faucibus, id pharetra metus venenatis. Phasellus nec diam a massa fermentum pellentesque. Vivamus suscipit, urna nec varius cursus, quam urna aliquet urna, eget sollicitudin nisi turpis non enim."
+            question: "What kind of reports does Collerk generate?",
+            answer: "Collerk provides customizable reports, showcasing performance data like engagement rates, audience demographics, and post success metrics, all downloadable as PDFs."
         },
     ];
 
     return (
-        <section className="bg-white/80 py-20" id='faq'>
-            <div className="max-w-sm sm:max-w-2xl mx-auto">
-                <h1 className="text-3xl font-bold text-center mb-12 capitalize">Frequently Asked Questions</h1>
+        <section className="bg-white py-20" id="faq">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 className="text-4xl font-bold text-center mb-16 text-gray-900">Frequently Asked Questions</h1>
 
-                <div className="space-y-4">
-                    {faqs.map((faq, index) => {
-                        return (
-                            <div key={index} className="bg-slate-100/50 p-4 px-7 rounded-lg hover:shadow">
-                                <Accordion
-                                    className='flex w-full flex-col'
-                                    transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-                                    variants={{
-                                        expanded: {
-                                            opacity: 1,
-                                            scale: 1,
-                                        },
-                                        collapsed: {
-                                            opacity: 0,
-                                            scale: 0.7,
-                                        },
-                                    }}
-                                >
-                                    <AccordionItem value='getting-started' className='py-2'>
-                                        <AccordionTrigger className='w-full py-0.5 text-left text-zinc-950'>
-                                            <div className='flex items-center'>
-                                                <ChevronRight className='h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90' />
-                                                <div className='ml-2 text-zinc-950 text-xl font-semibold'>
-                                                    {faq.question}
-                                                </div>
-                                            </div>
-                                        </AccordionTrigger>
-                                        <AccordionContent className='origin-left'>
-                                            <p className='pl-6 pr-2 leading-relaxed text-zinc-500'>
-                                                {faq.answer}
-                                            </p>
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                </Accordion>
-                            </div>
-                        )
-                    })}
+                <div className="space-y-6">
+                    {faqs.map((faq, index) => (
+                        <FAQItem key={index} question={faq.question} answer={faq.answer} />
+                    ))}
                 </div>
             </div>
         </section>
-    )
+    );
 }
-export default FaqSection
+
+export default FaqSection;
