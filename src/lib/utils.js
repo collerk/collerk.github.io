@@ -15,8 +15,8 @@ export const formatPrice = (price) => {
 };
 
 export function constructMetadata({
-  title = "Your App",
-  description = "Your app desription goes here",
+  title = "Collerk",
+  description = "Social Media Management",
   image = "/openGraph.png",
   icons = "/favicon.ico",
 } = {}) {

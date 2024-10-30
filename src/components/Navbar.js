@@ -11,7 +11,7 @@ function Navbar() {
                 <div className='flex h-20 items-center justify-between'>
                     <div className='flex items-center justify-center gap-14'>
                         <Link href='/' className='flex z-40 font-bold text-lg'>
-                            <span>Your App</span>
+                            <span>Collerk</span>
                         </Link>
 
                         <div className="hidden md:flex items-center justify-center gap-8 lg:gap-14">
