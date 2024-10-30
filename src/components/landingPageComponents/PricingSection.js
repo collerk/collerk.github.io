@@ -1,192 +1,184 @@
 'use client'
-import { Building2, CircleCheck } from "lucide-react"
+import { Building2, CircleCheck, Info } from "lucide-react"
 import MaxWidthWrapper from "../MaxWidthWrapper"
 import Link from "next/link"
+import { useState } from 'react'
 
 function PricingSection() {
+    const [isYearly, setIsYearly] = useState(false)
+    
+    const plans = [
+        {
+            name: 'Starter',
+            monthlyPrice: 15,
+            yearlyPrice: 153, // 15 * 12 * 0.85 (15% discount)
+            description: 'Perfect for individual creators and small businesses',
+            limit: 'Manage up to 5 social profiles',
+            features: [
+                'Schedule up to 30 posts/month',
+                'Basic analytics dashboard',
+                'Content idea planner (3/day)',
+                'Basic AI content assistance'
+            ]
+        },
+        {
+            name: 'Growth',
+            monthlyPrice: 49,
+            yearlyPrice: 499, // 49 * 12 * 0.85
+            description: 'Perfect for growing businesses and professional creators',
+            limit: 'Manage up to 15 social profiles',
+            features: [
+                'Unlimited scheduled posts',
+                'Advanced analytics & reports',
+                'Unlimited content ideas',
+                'Advanced AI content creation',
+                'Engagement analytics',
+                'Brand collaboration tools',
+                'Priority support'
+            ],
+            popular: true
+        },
+        {
+            name: 'Agency',
+            monthlyPrice: null,
+            yearlyPrice: null,
+            description: 'Tailored for marketing agencies and large teams',
+            limit: 'Custom social profile limits & team management',
+            features: [
+                'Custom profile limits',
+                'Team collaboration tools',
+                'White-label reports',
+                'API access',
+                'Dedicated success manager'
+            ]
+        }
+    ]
+
     return (
-        <section className="bg-[#F8F9FA]" id="pricing">
+        <section className="bg-gradient-to-b from-slate-50 to-white" id="pricing">
             <MaxWidthWrapper className='py-20'>
                 <div className="flex flex-col items-center justify-center">
                     <div className="bg-primary/10 rounded-full px-4 py-2">
-                        <p className='text-primary text-xs font-medium tracking-wide'>PRICING</p>
+                        <p className='text-primary text-xs font-medium tracking-wide'>PRICING PLANS</p>
                     </div>
 
+                    <h2 className="text-4xl font-bold text-center mt-4 mb-2 tracking-tight">
+                        Choose Your Growth Path
+                    </h2>
+
                     <div className="max-w-lg text-center mt-4">
-                        <p className="text-[#6B7989] text-lg">
-                            Choose Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        <p className="text-slate-600 text-lg">
+                            Start free, scale as you grow. No hidden fees.
                         </p>
+                    </div>
+
+                    {/* Billing Toggle */}
+                    <div className="mt-10 p-1 rounded-lg bg-slate-100 inline-flex items-center gap-2">
+                        <button
+                            onClick={() => setIsYearly(false)}
+                            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                                !isYearly 
+                                ? 'bg-white shadow-sm text-slate-900' 
+                                : 'text-slate-600 hover:text-slate-900'
+                            }`}
+                        >
+                            Monthly
+                        </button>
+                        <button
+                            onClick={() => setIsYearly(true)}
+                            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                                isYearly 
+                                ? 'bg-white shadow-sm text-slate-900' 
+                                : 'text-slate-600 hover:text-slate-900'
+                            }`}
+                        >
+                            Yearly
+                            <span className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-xs px-2 py-0.5 rounded-full">
+                                Save 15%
+                            </span>
+                        </button>
                     </div>
                 </div>
 
-                {/* price chart */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-7 my-4 md:my-10 text-[#293A51]">
-                    {/* free plan */}
-                    <div className="bg-white p-8 rounded-xl shadow-sm mt-14">
-                        <h3 className='text-2xl font-bold mb-4 text-center'>Free</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10 text-slate-900">
+                    {plans.map((plan, index) => (
+                        <div 
+                            key={plan.name}
+                            className={`relative bg-white rounded-xl p-8 transition-all duration-200 hover:shadow-xl ${
+                                plan.popular 
+                                ? 'border-2 border-violet-600 shadow-lg' 
+                                : 'border border-slate-200 hover:border-violet-600'
+                            } group`}
+                        >
+                            {plan.popular && (
+                                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Most Popular
+                                </div>
+                            )}
 
-                        <p className='font-bold mb-6 text-center'>
-                            <span className='text-6xl'>$0 </span><span className='text-xs text-[#6B7989]'>/ month</span>
-                        </p>
+                            <h3 className='text-2xl font-bold mb-4'>{plan.name}</h3>
 
-                        <p className="text-center font-bold text-[#6B7989]">
-                            Perfect for Lorem ipsum dolor sit amet.
-                        </p>
+                            {plan.monthlyPrice ? (
+                                <div className='mb-6'>
+                                    <p className='font-bold'>
+                                        <span className={`text-5xl transition-all duration-200 ${
+                                            isYearly ? 'text-slate-400 line-through' : ''
+                                        }`}>
+                                            ${plan.monthlyPrice}
+                                        </span>
+                                        {isYearly && (
+                                            <span className='text-6xl ml-2'>
+                                                ${Math.round(plan.yearlyPrice / 12)}
+                                            </span>
+                                        )}
+                                        <span className='text-sm text-slate-600 ml-2'>
+                                            /month
+                                        </span>
+                                    </p>
+                                    {isYearly && (
+                                        <p className="text-sm text-slate-600 mt-1">
+                                            ${plan.yearlyPrice}/year when billed annually
+                                        </p>
+                                    )}
+                                </div>
+                            ) : (
+                                <div className="bg-slate-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto my-6">
+                                    <Building2 className="h-8 w-8 text-slate-600" />
+                                </div>
+                            )}
 
-                        <div className="bg-[#F8F9FA] w-full py-2 rounded-sm flex items-center justify-center font-medium my-4">
-                            <p className="text-xs text-[#6B7989]">
-                                Access to basic features
+                            <p className="text-slate-600 font-medium">
+                                {plan.description}
                             </p>
-                        </div>
 
-                        <div className="px-6">
-                            <Link href='/'
-                                className='flex items-center justify-center cursor-pointer border-2 border-primary px-5 py-[0.45rem] rounded-full hover:bg-primary hover:text-white font-medium text-primary transition-colors duration-200 ease-out'
+                            <div className="bg-slate-50 w-full py-2 px-4 rounded-lg flex items-center justify-center font-medium my-6">
+                                <p className="text-sm text-slate-600">
+                                    {plan.limit}
+                                </p>
+                            </div>
+
+                            <Link 
+                                href={plan.monthlyPrice ? '/signup' : '/contact'}
+                                className={`w-full flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                                    plan.popular
+                                    ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700'
+                                    : 'border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white'
+                                }`}
                             >
-                                Start for Free
+                                {plan.monthlyPrice ? 'Start Free Trial' : 'Contact Sales'}
                             </Link>
+
+                            <ul className="mt-8 space-y-4">
+                                {plan.features.map((feature, i) => (
+                                    <li key={i} className="flex items-center gap-2 group/item">
+                                        <CircleCheck className="h-5 w-5 shrink-0 text-violet-600" />
+                                        <span className="text-slate-600">{feature}</span>
+                                        <Info className="h-4 w-4 text-slate-400 opacity-0 group-hover/item:opacity-100 transition-opacity cursor-help" />
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-
-                        <p className="font-medium mt-6 mb-4">
-                            Basic features included
-                        </p>
-
-
-                        <ul className="text-left text-[#6B7989] font-medium space-y-4 mb-8">
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Basic stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Basic stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Basic stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Basic stuff
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* pro plan */}
-                    <div className="relative bg-white p-4 md:p-8 rounded-xl shadow-sm border-2 md:border-4 border-primary">
-                        <div className="absolute top-[-1rem] left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Popular
-                        </div>
-                        <h3 className='text-2xl font-bold mb-4 text-center'>Pro</h3>
-
-                        <p className='font-bold mb-6 text-center'>
-                            <span className='text-6xl'>$999 </span><span className='text-xs text-[#6B7989]'>/ yearly</span>
-                        </p>
-
-                        <p className="text-center font-bold text-primary">
-                            Ideal for Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        </p>
-
-                        <div className="bg-[#F8F9FA] w-full py-2 rounded-sm flex items-center justify-center font-medium my-4">
-                            <p className="text-xs text-[#6B7989]">
-                                Full access to advanced features
-                            </p>
-                        </div>
-
-                        <div className="px-6 mb-6">
-                            <div
-                                className='flex items-center justify-center cursor-pointer px-5 py-[0.5rem] rounded-full bg-primary hover:bg-primary/90 font-medium text-white transition-colors duration-200 ease-out'
-                            >
-                                Subscribe now
-                            </div>
-                        </div>
-
-                        <ul className="text-left text-[#6B7989] font-medium space-y-4 mb-8">
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                <span className="font-bold text-[#293A51]">Unlimited</span> daily uses
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Premium stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Premium stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Premium stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Premium stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Premium stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                Premium stuff
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* enterprise plan */}
-                    <div className="bg-white p-8 rounded-xl shadow-sm mt-14">
-                        <h3 className='text-2xl font-bold text-center'>Enterprise</h3>
-                        <div className="bg-[#F8F9FA] rounded-full w-20 h-20 flex items-center justify-center mx-auto my-7">
-                            <Building2 className="h-8 w-8 text-[#6B7989]" />
-                        </div>
-
-
-                        <p className="text-center font-bold text-[#6B7989]">
-                            Tailored to Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-
-                        <div className="bg-[#F8F9FA] w-full py-2 px-6 rounded-sm flex items-center justify-center font-medium my-4">
-                            <p className="text-xs text-[#6B7989] text-center">
-                                Full access to all features, including exclusive enterprise tools
-                            </p>
-                        </div>
-
-                        <div className="px-6">
-                            <div
-                                className='flex items-center justify-center cursor-pointer border-2 border-primary px-5 py-[0.45rem] rounded-full hover:bg-primary hover:text-white font-medium text-primary transition-colors duration-200 ease-out'
-                            >
-                                Contact Us
-                            </div>
-                        </div>
-
-                        <p className="font-medium mt-6 mb-4">
-                            Everything in Pro, plus
-                        </p>
-
-
-                        <ul className="text-left text-[#6B7989] font-medium space-y-4 mb-8">
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                <span className="font-bold text-[#293A51]">Custom</span> stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                High-end stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                High-end stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                High-end stuff
-                            </li>
-                            <li className="flex gap-1.5 items-center text-left">
-                                <CircleCheck className="h-5 w-5 shrink-0 fill-[#39BAF6] text-white" />
-                                High-end stuff
-                            </li>
-                        </ul>
-                    </div>
+                    ))}
                 </div>
             </MaxWidthWrapper>
         </section>
