@@ -36,7 +36,10 @@ function Navbar() {
                     </div>
 
                     <div className='hidden md:flex items-center space-x-1.5'>
-                        <Link href='/' className={cn(buttonVariants({ size: "sm" }), "flex items-center justify-center group px-4")}>
+                        <Link href='/'                 className={cn(
+                  buttonVariants({ size: 'lg' }), 
+                  "bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700 group"
+                )}>
                             <span>Sign in</span>
                             <ArrowRight className='ml-1.5 transform h-4 w-4 transition-transform duration-300 group-hover:translate-x-1' />
                         </Link>

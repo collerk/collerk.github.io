@@ -4,6 +4,7 @@ import FinalPush from './landingPageComponents/FinalPush';
 import PricingSection from './landingPageComponents/PricingSection';
 import DemoSection from './landingPageComponents/DemoSection';
 import FeatureDisplay from './landingPageComponents/FeatureDisplay';
+import FeatureDisplay1 from './landingPageComponents/FeatureDisplay1';
 import HeroSection from './landingPageComponents/HeroSection';
 import BeforeAfter from './landingPageComponents/BeforeAfter';
 import Testimonials from './landingPageComponents/Testimonials';
@@ -15,6 +16,7 @@ function LandingPage() {
             <HeroSection />
             <BeforeAfter />
             <FeatureDisplay />
+            {/* <FeatureDisplay1 /> */}
             <DemoSection />
             <PricingSection />
             <FaqSection />
