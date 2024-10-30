@@ -40,7 +40,7 @@ function Navbar() {
                   buttonVariants({ size: 'lg' }), 
                   "bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700 group"
                 )}>
-                            <span>Sign in</span>
+                            <span>Already a member?</span>
                             <ArrowRight className='ml-1.5 transform h-4 w-4 transition-transform duration-300 group-hover:translate-x-1' />
                         </Link>
                     </div>
