@@ -11,7 +11,7 @@ function Navbar() {
                 <div className='flex h-20 items-center justify-between'>
                     <div className='flex items-center justify-center gap-14'>
                         <Link href='/' className='flex z-40 font-bold text-lg'>
-                            <span>Collerk</span>
+                            <span>C O L L E R K</span>
                         </Link>
 
                         <div className="hidden md:flex items-center justify-center gap-8 lg:gap-14">
@@ -23,9 +23,6 @@ function Navbar() {
                             </Link>
                             <Link href='#faq' className='font-semibold hover:underline hover:underline-offset-1'>
                                 FAQs
-                            </Link>
-                            <Link href='#about' className='font-semibold hover:underline hover:underline-offset-1'>
-                                ABOUT
                             </Link>
                         </div>
                     </div>

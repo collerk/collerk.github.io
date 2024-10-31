@@ -36,7 +36,7 @@ function FinalPush() {
                 </div>
 
                 <div className="hidden md:flex items-center justify-center">
-                    <img src="/images/social-media-dashboard.png" alt="Social Media Dashboard" className="w-72 h-72 object-contain drop-shadow-lg" />
+                    <img src="https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?q=80&w=2796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Social Media Dashboard" className="w-72 h-72 object-contain drop-shadow-lg" />
                 </div>
             </div>
         </section>
