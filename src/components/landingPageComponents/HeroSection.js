@@ -54,7 +54,7 @@ const HeroSection = () => {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link 
-                href='dev.collerk.com/auth/signup' 
+                href='https://dev.collerk.com/auth/signup' 
                 className={cn(
                   buttonVariants({ size: 'lg' }), 
                   "bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700 group"
@@ -63,23 +63,14 @@ const HeroSection = () => {
                 Start Free Trial
                 <ArrowRight className='ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1' />
               </Link>
-              <Link 
-                href='#demo' 
-                className={cn(
-                  buttonVariants({ size: 'lg', variant: 'outline' }), 
-                  "group"
-                )}
-              >
-                Watch Demo
-              </Link>
             </div>
 
             <div className="mt-12 flex flex-col sm:flex-row sm:items-start items-center gap-8">
               <div className="flex items-center gap-4">
                 <Users2 className="h-5 w-5 text-violet-600" />
                 <div className="flex flex-col">
-                  <p className="font-semibold text-2xl">10,000+</p>
-                  <p className="text-slate-600">Active Users</p>
+                  <p className="font-semibold text-2xl">10+</p>
+                  <p className="text-slate-600">Social Channels</p>
                 </div>
               </div>
 

@@ -33,7 +33,7 @@ function Navbar() {
                     </div>
 
                     <div className='hidden md:flex items-center space-x-1.5'>
-                        <Link href='dev.collerk.com/auth/login'                 className={cn(
+                        <Link href='https://dev.collerk.com/auth/login'                 className={cn(
                   buttonVariants({ size: 'lg' }), 
                   "bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700 group"
                 )}>
