@@ -54,7 +54,6 @@ function Footer() {
                     <div className='flex flex-col items-center md:items-start'>
                         <h3 className='font-semibold text-gray-700 mb-3'>CONTACT</h3>
                         <p className='text-sm text-gray-600'>Email: support@collerk.com</p>
-                        <p className='text-sm text-gray-600'>Phone: +1 123 456 7890</p>
 
                         {/* Social Icons */}
                         <div className='flex space-x-4 mt-4'>

@@ -28,7 +28,7 @@ function FinalPush() {
                     </ul>
 
                     <div className="w-full lg:w-1/3 mt-6">
-                        <Link href='/' className={cn(buttonVariants({ size: "lg" }), "flex items-center justify-center group px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700 rounded-lg")}>
+                        <Link href='dev.collerk.com/auth/signup' className={cn(buttonVariants({ size: "lg" }), "flex items-center justify-center group px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700 rounded-lg")}>
                             <span className="font-semibold">Get Started Now</span>
                             <ArrowRight className='ml-2 transform h-5 w-5 transition-transform duration-300 group-hover:translate-x-1' />
                         </Link>

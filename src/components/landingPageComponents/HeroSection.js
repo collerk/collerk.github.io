@@ -54,7 +54,7 @@ const HeroSection = () => {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link 
-                href='#' 
+                href='dev.collerk.com/auth/signup' 
                 className={cn(
                   buttonVariants({ size: 'lg' }), 
                   "bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700 group"
